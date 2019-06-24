@@ -1,0 +1,462 @@
+{
+  "designerVersion" : "1.8.39",
+  "id" : "myVacationRequest",
+  "name" : "myVacationRequest",
+  "lastUpdate" : 1561391324525,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "Tahiti Vacation Management"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 1"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "33882e03-e0e1-4442-8063-0c4a1c401fee",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "Welcome to the Tahiti Vacation Management Page, <strong>{{session.user_name}}</strong>.You have <strong>{{myVacationAvailable[0].daysAvailableCounter}} vacation days</strong> available."
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "fa04e4e6-dfa0-41c5-b5dd-23f48e67e925",
+    "hasValidationError" : false,
+    "id" : "pbText"
+  }, {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "+ New vacation"
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "process"
+      },
+      "targetUrl" : {
+        "type" : "constant",
+        "value" : "http://"
+      },
+      "pageToken" : {
+        "type" : "constant"
+      },
+      "processName" : {
+        "type" : "constant",
+        "value" : "processCreate[0].name"
+      },
+      "processVersion" : {
+        "type" : "constant",
+        "value" : "processCreate[0].version"
+      },
+      "taskId" : {
+        "type" : "constant"
+      },
+      "caseId" : {
+        "type" : "constant"
+      },
+      "target" : {
+        "type" : "constant",
+        "value" : "_self"
+      },
+      "appToken" : {
+        "type" : "expression",
+        "value" : "urlStartCreateProcess"
+      },
+      "urlParams" : {
+        "type" : "constant"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "right"
+      },
+      "buttonStyle" : {
+        "type" : "constant",
+        "value" : "primary"
+      }
+    },
+    "reference" : "23facfb1-70a2-483d-97f2-4ea27b2a3a6d",
+    "hasValidationError" : false,
+    "id" : "pbLink"
+  } ], [ {
+    "type" : "container",
+    "dimension" : {
+      "xs" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "repeatedCollection" : {
+        "type" : "variable",
+        "value" : "myVacation"
+      }
+    },
+    "reference" : "c23891be-4e06-4acb-8b2f-8d33917242c4",
+    "hasValidationError" : false,
+    "id" : "pbContainer",
+    "rows" : [ [ ] ]
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "readOnly" : {
+        "type" : "expression",
+        "value" : "$item.status != \"pending\""
+      },
+      "required" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Start date"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 6
+      },
+      "value" : {
+        "type" : "variable",
+        "value" : "$item.startDate"
+      },
+      "dateFormat" : {
+        "type" : "constant",
+        "value" : "MM/dd/yyyy"
+      },
+      "placeholder" : {
+        "type" : "interpolation",
+        "value" : "Enter a date (mm/dd/yyyy)"
+      },
+      "showToday" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "todayLabel" : {
+        "type" : "interpolation",
+        "value" : "Today"
+      }
+    },
+    "reference" : "f4aa90fd-7265-4550-be23-7157508a87fa",
+    "hasValidationError" : false,
+    "id" : "pbDatePicker"
+  }, {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "readOnly" : {
+        "type" : "expression",
+        "value" : "$item.status != \"pending\""
+      },
+      "required" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Return date"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 6
+      },
+      "value" : {
+        "type" : "variable",
+        "value" : "$item.returnDate"
+      },
+      "dateFormat" : {
+        "type" : "constant",
+        "value" : "MM/dd/yyyy"
+      },
+      "placeholder" : {
+        "type" : "interpolation",
+        "value" : "Enter a date (mm/dd/yyyy)"
+      },
+      "showToday" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "todayLabel" : {
+        "type" : "interpolation",
+        "value" : "Today"
+      }
+    },
+    "reference" : "12da09ed-adcd-42c4-8014-abd8bcca951d",
+    "hasValidationError" : false,
+    "id" : "pbDatePicker"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "required" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "minLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "maxLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "readOnly" : {
+        "type" : "expression",
+        "value" : "$item.status != \"pending\""
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Number of days"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 6
+      },
+      "placeholder" : {
+        "type" : "interpolation"
+      },
+      "value" : {
+        "type" : "variable",
+        "value" : "$item.numberOfDays"
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "text"
+      },
+      "min" : {
+        "type" : "constant"
+      },
+      "max" : {
+        "type" : "constant"
+      },
+      "step" : {
+        "type" : "constant",
+        "value" : 1
+      }
+    },
+    "reference" : "4ae18347-7200-4cba-b885-3f2368578ab5",
+    "hasValidationError" : false,
+    "id" : "pbInput"
+  }, {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "required" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "minLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "maxLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "readOnly" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Status"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 6
+      },
+      "placeholder" : {
+        "type" : "interpolation"
+      },
+      "value" : {
+        "type" : "variable",
+        "value" : "$item.status"
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "text"
+      },
+      "min" : {
+        "type" : "constant"
+      },
+      "max" : {
+        "type" : "constant"
+      },
+      "step" : {
+        "type" : "constant",
+        "value" : 1
+      }
+    },
+    "reference" : "07a5d5fb-dd94-410f-b592-2548c3ee39a1",
+    "hasValidationError" : false,
+    "id" : "pbInput"
+  } ] ],
+  "assets" : [ {
+    "id" : "23a39f65-9177-4764-b695-84cb4fdc483e",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "myVacation" : {
+      "type" : "url",
+      "value" : "myVacation ../API/bdm/businessData/com.company.model.VacationRequest?q=findByRequesterBonitaBPMId&p=0&c=100&f=requesterBonitaBPMId={{session.user_id}}",
+      "exposed" : false
+    },
+    "myVacationAvailable" : {
+      "type" : "url",
+      "value" : "myVacationAvailable  ../API/bdm/businessData/com.company.model.VacationAvailable?q=findByBonitaBPMId&p=0&c=1&f=bonitaBPMId={{session.user_id}}",
+      "exposed" : false
+    },
+    "processCreate" : {
+      "type" : "url",
+      "value" : "processCreate ../API/bpm/process?s=New%20Vacation%20Request&p=0&c=10&o=version&f=activationState=ENABLED",
+      "exposed" : false
+    },
+    "session" : {
+      "type" : "url",
+      "value" : "../API/system/session/unusedid",
+      "exposed" : false
+    },
+    "urlStartCreateProcess" : {
+      "type" : "expression",
+      "value" : "if ($data.processCreate &&$data.processCreate.length > 0)\r\n\t{ return\"/bonita/portal/resource/process/\"\r\n\t+$data.processCreate[$data.processCreate.length-1].name+ \"/\"\r\n\t+$data.processCreate[$data.processCreate.length-1].version\r\n\t+\"/content/?id=\"+$data.processCreate[$data.processCreate.length-1].id; } \r\nelse {return null; }",
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "3446c0db-33e1-4d0e-8acf-0c48333011f7",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "myVacationRequest"
+}
